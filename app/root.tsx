@@ -1,9 +1,11 @@
 import {useNonce} from '@shopify/hydrogen';
+
 import {
   defer,
   type SerializeFrom,
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
+
 import {
   Links,
   Meta,
@@ -22,6 +24,10 @@ import favicon from '../public/favicon.svg';
 import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
+
+// CUSTOM CODE;
+
+import customStyle from './styles/custom.css';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -48,6 +54,7 @@ export function links() {
   return [
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
+    {rel: 'stylesheet', href: customStyle},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
